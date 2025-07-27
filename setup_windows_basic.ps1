@@ -38,7 +38,7 @@ if (Test-Path $activateScript) {
 # Install SecureAI
 Write-Host "Installing SecureAI..."
 python -m pip install --upgrade pip
-python -m pip install git+https://github.com/postralai/masquerade@main
+python -m pip install git+https://github.com/postralai/secureai@main
 Write-Host "SecureAI installed"
 
 # Create .env file

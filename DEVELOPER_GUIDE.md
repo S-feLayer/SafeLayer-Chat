@@ -153,7 +153,7 @@ cp secureai_sdk.py your_project/
 ```bash
 # Basic functionality works without additional dependencies
 # For advanced features (optional):
-pip install git+https://github.com/postralai/masquerade@main
+pip install git+https://github.com/postralai/secureai@main
 ```
 
 ### **Step 3: Integrate**

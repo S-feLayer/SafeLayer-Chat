@@ -19,9 +19,9 @@ def test_basic_redaction():
     print("=" * 40)
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
-        from masquerade.enhanced_detection import EnhancedDetection
-        from masquerade.advanced_masking import AdvancedMasking, MaskingStrategy
+        from secureai.tinfoil_llm import TinfoilLLM
+        from secureai.enhanced_detection import EnhancedDetection
+        from secureai.advanced_masking import AdvancedMasking, MaskingStrategy
         
         # Initialize components
         tinfoil_llm = TinfoilLLM()
@@ -59,7 +59,7 @@ def test_smart_model_selection():
     print("=" * 40)
     
     try:
-        from masquerade.smart_model_selection import SmartModelSelector
+        from secureai.smart_model_selection import SmartModelSelector
         
         selector = SmartModelSelector()
         
@@ -119,8 +119,8 @@ def test_enhanced_detection():
     print("=" * 40)
     
     try:
-        from masquerade.enhanced_detection import EnhancedDetection
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.enhanced_detection import EnhancedDetection
+        from secureai.tinfoil_llm import TinfoilLLM
         
         tinfoil_llm = TinfoilLLM()
         detector = EnhancedDetection(tinfoil_llm)
@@ -168,7 +168,7 @@ def test_advanced_masking():
     print("=" * 40)
     
     try:
-        from masquerade.advanced_masking import AdvancedMasking, MaskingStrategy
+        from secureai.advanced_masking import AdvancedMasking, MaskingStrategy
         
         test_content = "Hi, I'm John Smith. My email is john@example.com and phone is 555-123-4567."
         sensitive_data = {
@@ -203,9 +203,9 @@ def test_conversation_flow():
     print("=" * 40)
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
-        from masquerade.enhanced_detection import EnhancedDetection
-        from masquerade.advanced_masking import AdvancedMasking, MaskingStrategy
+        from secureai.tinfoil_llm import TinfoilLLM
+        from secureai.enhanced_detection import EnhancedDetection
+        from secureai.advanced_masking import AdvancedMasking, MaskingStrategy
         
         tinfoil_llm = TinfoilLLM()
         detector = EnhancedDetection(tinfoil_llm)

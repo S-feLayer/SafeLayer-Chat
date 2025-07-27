@@ -1,5 +1,5 @@
-# Simple Windows Setup Script for Masquerade MCP
-Write-Host "🚀 Masquerade Windows Setup" -ForegroundColor Green
+# Simple Windows Setup Script for Secure AI MCP
+Write-Host "🚀 Secure AI Windows Setup" -ForegroundColor Green
 Write-Host "================================"
 
 # Set execution policy
@@ -36,15 +36,15 @@ if (Test-Path $activateScript) {
     exit 1
 }
 
-# Install Masquerade
-Write-Host "📦 Installing Masquerade..." -ForegroundColor Yellow
+# Install Secure AI
+Write-Host "📦 Installing Secure AI..." -ForegroundColor Yellow
 python -m pip install --upgrade pip
-python -m pip install git+https://github.com/postralai/masquerade@main
-Write-Host "✅ Masquerade installed" -ForegroundColor Green
+python -m pip install git+https://github.com/postralai/secureai@main
+Write-Host "✅ Secure AI installed" -ForegroundColor Green
 
 # Create .env file
 Write-Host "🔧 Creating .env file..." -ForegroundColor Yellow
-$envContent = "# Masquerade Environment Variables`n# Add your Tinfoil API key here`nTINFOIL_API_KEY=your_api_key_here`n`n# Optional: Set custom paths`n# MASQUERADE_CACHE_DIR=./cache`n# MASQUERADE_LOG_LEVEL=INFO"
+$envContent = "# Secure AI Environment Variables`n# Add your Tinfoil API key here`nTINFOIL_API_KEY=your_api_key_here`n`n# Optional: Set custom paths`n# SECUREAI_CACHE_DIR=./cache`n# SECUREAI_LOG_LEVEL=INFO"
 $envContent | Out-File -FilePath ".env" -Encoding UTF8
 Write-Host "✅ Created .env file" -ForegroundColor Green
 

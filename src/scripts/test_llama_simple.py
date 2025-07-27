@@ -17,7 +17,7 @@ def test_llama_basic():
     print("=" * 50)
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.tinfoil_llm import TinfoilLLM
         
         # Initialize with API key
         api_key = "tk_WC48lzpUM12DFaYKPm4f65FWLGxRgVyc17EduuZRvQ440gi9"
@@ -80,7 +80,7 @@ def test_model_recommendation():
     print("=" * 50)
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.tinfoil_llm import TinfoilLLM
         
         api_key = "tk_WC48lzpUM12DFaYKPm4f65FWLGxRgVyc17EduuZRvQ440gi9"
         tinfoil_llm = TinfoilLLM(api_key)

@@ -1,4 +1,4 @@
-# Windows Setup Script for Masquerade MCP
+# Windows Setup Script for Secure AI MCP
 # Run this script as Administrator to resolve permission issues
 
 param(
@@ -29,7 +29,7 @@ if (-not (Test-Administrator)) {
     }
 }
 
-Write-Host "🚀 Masquerade Windows Setup" -ForegroundColor Green
+Write-Host "🚀 Secure AI Windows Setup" -ForegroundColor Green
 Write-Host "================================"
 
 # 1. Check Python installation
@@ -103,27 +103,27 @@ if (-not $SkipVirtualEnv) {
     }
 }
 
-# 3. Install Masquerade
+# 3. Install Secure AI
 if (-not $SkipInstall) {
-    Write-Host "📦 Installing Masquerade..." -ForegroundColor Yellow
+    Write-Host "📦 Installing Secure AI..." -ForegroundColor Yellow
     
     # Upgrade pip first
     & python -m pip install --upgrade pip
     
-    # Install Masquerade
+    # Install Secure AI
     try {
-        & python -m pip install git+https://github.com/postralai/masquerade@main
-        Write-Host "✅ Masquerade installed successfully" -ForegroundColor Green
+        & python -m pip install git+https://github.com/postralai/secureai@main
+        Write-Host "✅ Secure AI installed successfully" -ForegroundColor Green
     }
     catch {
-        Write-Host "❌ Failed to install Masquerade: $_" -ForegroundColor Red
+        Write-Host "❌ Failed to install Secure AI: $_" -ForegroundColor Red
         exit 1
     }
     
     # Configure Claude
     Write-Host "⚙️  Configuring Claude..." -ForegroundColor Yellow
     try {
-        & python -m masquerade.configure_claude
+        & python -m secureai.configure_claude
         Write-Host "✅ Claude configuration completed" -ForegroundColor Green
     }
     catch {
@@ -139,13 +139,13 @@ Write-Host "🔧 Setting up environment variables..." -ForegroundColor Yellow
 $envFile = ".env"
 if (-not (Test-Path $envFile)) {
     $envContent = @"
-# Masquerade Environment Variables
+# Secure AI Environment Variables
 # Add your Tinfoil API key here
 TINFOIL_API_KEY=your_api_key_here
 
 # Optional: Set custom paths
-# MASQUERADE_CACHE_DIR=./cache
-# MASQUERADE_LOG_LEVEL=INFO
+# SECUREAI_CACHE_DIR=./cache
+# SECUREAI_LOG_LEVEL=INFO
 "@
     $envContent | Out-File -FilePath $envFile -Encoding UTF8
     

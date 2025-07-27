@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Example usage of Masquerade's universal redaction capabilities.
+Example usage of Secure AI's universal redaction capabilities.
 This script demonstrates how to redact PDFs, code files, and text content.
 """
 
 import os
 import tempfile
-from masquerade import redact_content, get_supported_formats
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_content, get_supported_formats
+from secureai.tinfoil_llm import TinfoilLLM
 
 def create_example_files():
     """Create example files for demonstration."""
@@ -56,7 +56,7 @@ USER_ADDRESS = "123 Main St, City, State 12345"
 
 def demonstrate_redaction():
     """Demonstrate the redaction capabilities."""
-    print("🚀 Masquerade Universal Redaction Demo")
+    print("🚀 Secure AI Universal Redaction Demo")
     print("=" * 50)
     
     # Initialize Tinfoil LLM

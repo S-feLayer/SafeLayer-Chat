@@ -1,6 +1,6 @@
 # Universal Redaction Guide
 
-Masquerade now supports redaction across multiple content types: PDFs, code files, and text content. This guide covers all the new capabilities and how to use them.
+Secure AI now supports redaction across multiple content types: PDFs, code files, and text content. This guide covers all the new capabilities and how to use them.
 
 ## Overview
 
@@ -41,8 +41,8 @@ The universal redaction system automatically detects the content type and applie
 ### Main Function: `redact_content()`
 
 ```python
-from masquerade import redact_content
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_content
+from secureai.tinfoil_llm import TinfoilLLM
 
 tinfoil_llm = TinfoilLLM()
 
@@ -74,7 +74,7 @@ result = redact_content(input_data, tinfoil_llm)
 
 #### PDF Redaction
 ```python
-from masquerade import redact_pdf
+from secureai import redact_pdf
 
 result = redact_pdf("document.pdf", tinfoil_llm)
 redaction_summary, highlighted_path = result
@@ -82,14 +82,14 @@ redaction_summary, highlighted_path = result
 
 #### Code Redaction
 ```python
-from masquerade import redact_code_file
+from secureai import redact_code_file
 
 result = redact_code_file("config.py", tinfoil_llm)
 ```
 
 #### Text Redaction
 ```python
-from masquerade import redact_text
+from secureai import redact_text
 
 result = redact_text("Hello John, my email is john@example.com", tinfoil_llm)
 ```
@@ -99,8 +99,8 @@ result = redact_text("Hello John, my email is john@example.com", tinfoil_llm)
 ### 1. Redacting a PDF Document
 
 ```python
-from masquerade import redact_content
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_content
+from secureai.tinfoil_llm import TinfoilLLM
 
 tinfoil_llm = TinfoilLLM()
 
@@ -277,10 +277,10 @@ If you're upgrading from the PDF-only version:
 1. **Update imports**:
    ```python
    # Old
-   from masquerade import redact_pdf
+   from secureai import redact_pdf
    
    # New
-   from masquerade import redact_content, redact_pdf
+   from secureai import redact_content, redact_pdf
    ```
 
 2. **Update MCP configuration**:

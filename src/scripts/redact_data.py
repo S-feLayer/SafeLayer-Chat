@@ -1,5 +1,5 @@
-from masquerade.redact_per_pdf import redact_pdf
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai.redact_per_pdf import redact_pdf
+from secureai.tinfoil_llm import TinfoilLLM
 from pprint import pprint
 
 

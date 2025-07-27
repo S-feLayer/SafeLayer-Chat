@@ -85,7 +85,7 @@
 #### 2. Monitoring & Logging
 - **`monitoring/prometheus.yml`** - Metrics collection
 - **`config/logging.json`** - Structured logging
-- **`src/masquerade/health_check.py`** - Health monitoring
+- **`src/secureai/health_check.py`** - Health monitoring
 
 #### 3. Documentation
 - **`docs/integration_guide.md`** - API integration guide

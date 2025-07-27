@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Comprehensive test suite for Masquerade's universal redaction system.
+Comprehensive test suite for Secure AI's universal redaction system.
 This script tests all features with various scenarios and edge cases.
 """
 
@@ -17,7 +17,7 @@ src_path = Path(__file__).parent.parent
 sys.path.insert(0, str(src_path))
 
 class TestSuite:
-    """Comprehensive test suite for Masquerade."""
+    """Comprehensive test suite for Secure AI."""
     
     def __init__(self):
         self.results = {
@@ -131,13 +131,13 @@ JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
     def test_imports(self) -> bool:
         """Test that all modules can be imported."""
         try:
-            from masquerade import (
+            from secureai import (
                 redact_content, redact_pdf, redact_text, redact_code_file, 
                 get_supported_formats
             )
-            from masquerade.redact_content import detect_content_type, extract_input_data
-            from masquerade.redact_code import CODE_EXTENSIONS, detect_language
-            from masquerade.tinfoil_llm import TinfoilLLM
+            from secureai.redact_content import detect_content_type, extract_input_data
+            from secureai.redact_code import CODE_EXTENSIONS, detect_language
+            from secureai.tinfoil_llm import TinfoilLLM
             return True
         except ImportError as e:
             print(f"Import error: {e}")
@@ -145,7 +145,7 @@ JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
     
     def test_content_type_detection(self) -> bool:
         """Test content type detection."""
-        from masquerade.redact_content import detect_content_type
+        from secureai.redact_content import detect_content_type
         
         test_cases = [
             ("document.pdf", "pdf"),
@@ -168,7 +168,7 @@ JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
     
     def test_supported_formats(self) -> bool:
         """Test supported formats function."""
-        from masquerade import get_supported_formats
+        from secureai import get_supported_formats
         
         formats = get_supported_formats()
         
@@ -190,7 +190,7 @@ JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
     
     def test_language_detection(self) -> bool:
         """Test language detection."""
-        from masquerade.redact_code import detect_language
+        from secureai.redact_code import detect_language
         
         test_cases = [
             ("script.py", "python"),
@@ -212,8 +212,8 @@ JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
     def test_text_redaction(self) -> bool:
         """Test text redaction functionality."""
         try:
-            from masquerade import redact_text
-            from masquerade.tinfoil_llm import TinfoilLLM
+            from secureai import redact_text
+            from secureai.tinfoil_llm import TinfoilLLM
             
             tinfoil_llm = TinfoilLLM()
             test_text = self.test_data["text_samples"]["simple"]
@@ -242,8 +242,8 @@ JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
     def test_code_redaction(self) -> bool:
         """Test code redaction functionality."""
         try:
-            from masquerade import redact_code_file
-            from masquerade.tinfoil_llm import TinfoilLLM
+            from secureai import redact_code_file
+            from secureai.tinfoil_llm import TinfoilLLM
             
             # Create temporary code file
             with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False) as f:
@@ -281,8 +281,8 @@ JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
     def test_universal_redaction(self) -> bool:
         """Test universal redaction functionality."""
         try:
-            from masquerade import redact_content
-            from masquerade.tinfoil_llm import TinfoilLLM
+            from secureai import redact_content
+            from secureai.tinfoil_llm import TinfoilLLM
             
             tinfoil_llm = TinfoilLLM()
             
@@ -319,7 +319,7 @@ JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
     
     def test_edge_cases(self) -> bool:
         """Test edge cases and error handling."""
-        from masquerade.redact_content import redact_content
+        from secureai.redact_content import redact_content
         
         # Test with None
         try:
@@ -350,8 +350,8 @@ JWT_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZ
     def test_performance(self) -> bool:
         """Test performance with large content."""
         try:
-            from masquerade import redact_content
-            from masquerade.tinfoil_llm import TinfoilLLM
+            from secureai import redact_content
+            from secureai.tinfoil_llm import TinfoilLLM
             
             # Create large test content
             large_text = "Hello John Doe, my email is john@example.com. " * 1000

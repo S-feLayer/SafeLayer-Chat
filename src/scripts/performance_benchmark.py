@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Performance benchmarking script for Masquerade.
+Performance benchmarking script for Secure AI.
 Tests speed, memory usage, and efficiency of redaction operations.
 """
 
@@ -18,7 +18,7 @@ src_path = Path(__file__).parent.parent
 sys.path.insert(0, str(src_path))
 
 class PerformanceBenchmark:
-    """Performance benchmarking for Masquerade."""
+    """Performance benchmarking for Secure AI."""
     
     def __init__(self):
         self.results = {}
@@ -108,8 +108,8 @@ class PerformanceBenchmark:
     def benchmark_text_redaction(self) -> Dict[str, Any]:
         """Benchmark text redaction performance."""
         try:
-            from masquerade import redact_text
-            from masquerade.tinfoil_llm import TinfoilLLM
+            from secureai import redact_text
+            from secureai.tinfoil_llm import TinfoilLLM
             
             tinfoil_llm = TinfoilLLM()
             
@@ -143,8 +143,8 @@ class PerformanceBenchmark:
     def benchmark_code_redaction(self) -> Dict[str, Any]:
         """Benchmark code redaction performance."""
         try:
-            from masquerade import redact_code_file
-            from masquerade.tinfoil_llm import TinfoilLLM
+            from secureai import redact_code_file
+            from secureai.tinfoil_llm import TinfoilLLM
             
             tinfoil_llm = TinfoilLLM()
             
@@ -211,7 +211,7 @@ JWT_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibm
     
     def benchmark_content_type_detection(self) -> Dict[str, Any]:
         """Benchmark content type detection performance."""
-        from masquerade.redact_content import detect_content_type
+        from secureai.redact_content import detect_content_type
         
         test_cases = [
             ("PDF file", "document.pdf"),
@@ -239,7 +239,7 @@ JWT_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibm
     
     def benchmark_language_detection(self) -> Dict[str, Any]:
         """Benchmark language detection performance."""
-        from masquerade.redact_code import detect_language
+        from secureai.redact_code import detect_language
         
         test_cases = [
             ("Python", "script.py"),
@@ -269,8 +269,8 @@ JWT_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibm
     def benchmark_memory_efficiency(self) -> Dict[str, Any]:
         """Benchmark memory efficiency with large content."""
         try:
-            from masquerade import redact_content
-            from masquerade.tinfoil_llm import TinfoilLLM
+            from secureai import redact_content
+            from secureai.tinfoil_llm import TinfoilLLM
             
             tinfoil_llm = TinfoilLLM()
             

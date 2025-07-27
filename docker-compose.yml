@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  masquerade-mcp:
+  secureai-mcp:
     build: .
     ports:
       - "8000:8000"
     environment:
       - TINFOIL_API_KEY=${TINFOIL_API_KEY}
-      - MASQUERADE_ENV=production
+      - SECUREAI_ENV=production
     volumes:
       - ./logs:/app/logs
       - ./cache:/app/cache

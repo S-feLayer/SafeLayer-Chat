@@ -1,0 +1,9 @@
+# SecureAI SDK Requirements
+# Minimal dependencies for the SDK package
+
+# Core dependencies
+requests>=2.31.0
+pydantic>=2.0.0
+
+# Optional dependencies for enhanced functionality
+python-dotenv>=1.0.0 

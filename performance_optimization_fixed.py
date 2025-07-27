@@ -26,7 +26,7 @@ def test_basic_redaction_performance():
     print("=" * 50)
     
     try:
-        from masquerade import redact_text
+        from secureai import redact_text
         
         # Test data
         test_cases = [
@@ -86,7 +86,7 @@ def test_memory_usage():
     print("=" * 50)
     
     try:
-        from masquerade import redact_text
+        from secureai import redact_text
         
         # Get initial memory usage
         process = psutil.Process()
@@ -126,7 +126,7 @@ def test_concurrent_processing():
     print("=" * 50)
     
     try:
-        from masquerade import redact_text
+        from secureai import redact_text
         import threading
         
         def process_text(text_id, content):
@@ -184,7 +184,7 @@ def test_file_processing():
     print("=" * 50)
     
     try:
-        from masquerade import redact_content
+        from secureai import redact_content
         
         # Create test files
         test_files = []

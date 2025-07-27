@@ -2,7 +2,7 @@
 """
 AI Model Integration Demo
 
-This script demonstrates how to use Masquerade with Tinfoil for redaction
+This script demonstrates how to use Secure AI with Tinfoil for redaction
 before sending content to other AI models like ChatGPT, Grok, or Gemini.
 """
 
@@ -14,8 +14,8 @@ from typing import Dict, Any, Optional
 # Add src to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from masquerade.redact_content import redact_content
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai.redact_content import redact_content
+from secureai.tinfoil_llm import TinfoilLLM
 
 class AIModelIntegration:
     """
@@ -38,7 +38,7 @@ class AIModelIntegration:
         """
         print(f"🔍 Detecting and redacting sensitive data using Tinfoil...")
         
-        # Use Masquerade's universal redaction
+        # Use Secure AI's universal redaction
         result = redact_content(content, self.tinfoil_llm)
         
         if result["success"]:

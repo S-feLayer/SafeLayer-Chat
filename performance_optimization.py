@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Performance Optimization Script for Masquerade MCP
+Performance Optimization Script for Secure AI MCP
 
-This script helps optimize Masquerade for specific use cases by:
+This script helps optimize Secure AI for specific use cases by:
 1. Testing different configurations
 2. Benchmarking performance
 3. Optimizing for specific content types
@@ -26,7 +26,7 @@ def test_basic_redaction_performance():
     print("=" * 50)
     
     try:
-        from masquerade.redact_content import RedactContent
+        from secureai.redact_content import RedactContent
         
         redactor = RedactContent()
         
@@ -88,7 +88,7 @@ def test_memory_usage():
     print("=" * 50)
     
     try:
-        from masquerade.redact_content import RedactContent
+        from secureai.redact_content import RedactContent
         
         redactor = RedactContent()
         
@@ -130,7 +130,7 @@ def test_concurrent_processing():
     print("=" * 50)
     
     try:
-        from masquerade.redact_content import RedactContent
+        from secureai.redact_content import RedactContent
         import threading
         
         redactor = RedactContent()
@@ -190,7 +190,7 @@ def test_file_processing():
     print("=" * 50)
     
     try:
-        from masquerade.redact_content import RedactContent
+        from secureai.redact_content import RedactContent
         
         redactor = RedactContent()
         
@@ -301,7 +301,7 @@ def generate_optimization_report(results):
 
 def main():
     """Main performance optimization function."""
-    print("🚀 Masquerade Performance Optimization")
+    print("🚀 Secure AI Performance Optimization")
     print("=" * 60)
     print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     

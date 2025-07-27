@@ -1,9 +1,43 @@
+# Core MCP dependencies
 fastmcp==0.4.1
 mcp==1.3.0
+
+# PDF processing
 PyMuPDF>=1.26.0
+
+# AI/LLM integration
 tinfoil
+
+# System monitoring and utilities
 psutil>=5.8.0
 requests>=2.31.0
 python-dotenv>=1.0.0
+
+# Monitoring and metrics
 prometheus-client>=0.17.0
 structlog>=23.0.0
+
+# Production dependencies
+uvicorn>=0.24.0
+starlette>=0.27.0
+httpx>=0.25.0
+
+# Security and validation
+cryptography>=41.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Logging and configuration
+python-json-logger>=2.0.0
+colorama>=0.4.6
+
+# Testing and development
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-asyncio>=0.21.0
+coverage>=7.0.0
+
+# Code quality
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0

@@ -12,7 +12,7 @@ def test_api_connection():
     print("Testing API Connection...")
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.tinfoil_llm import TinfoilLLM
         
         # Get API key from environment
         api_key = os.getenv("TINFOIL_API_KEY")
@@ -37,7 +37,7 @@ def test_text_redaction(tinfoil_llm):
     print("\nTesting Text Redaction...")
     
     try:
-        from masquerade import redact_text
+        from secureai import redact_text
         
         # Test text with PII
         test_text = "Hello, my name is John Doe and my email is john.doe@example.com"

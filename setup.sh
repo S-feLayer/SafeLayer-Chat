@@ -43,14 +43,14 @@ $PYTHON_CMD -m venv pdfmcp
 source pdfmcp/bin/activate
 echo "✅ Python virtual environment has been created"
 
-# 3. Ask for permission to install masquerade
-read -p "💡 Can I install Masquerade (this github repository)? (y/n): " answer
+# 3. Ask for permission to install secureai
+read -p "💡 Can I install Secure AI (this github repository)? (y/n): " answer
 if [[ ! "$answer" =~ ^[Yy](es)?$ ]]; then
-    echo "❌ Masquerade installation cancelled by user"
+    echo "❌ Secure AI installation cancelled by user"
     exit 0
 fi
-pip install git+https://github.com/postralai/masquerade@main
-echo "✅ Masquerade has been installed"
+pip install git+https://github.com/postralai/secureai@main
+echo "✅ Secure AI has been installed"
 
-# Configure masquerade
-python -m masquerade.configure_claude
+# Configure secureai
+python -m secureai.configure_claude

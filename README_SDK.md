@@ -23,7 +23,7 @@ git clone https://github.com/your-repo/secureai-sdk.git
 cd secureai-sdk
 
 # Install dependencies (optional for advanced features)
-pip install git+https://github.com/postralai/masquerade@main
+pip install git+https://github.com/postralai/secureai@main
 ```
 
 ### Basic Usage

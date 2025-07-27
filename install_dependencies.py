@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Installation script for Masquerade dependencies.
+Installation script for Secure AI dependencies.
 This script helps install all required dependencies for the project.
 """
 
@@ -34,7 +34,7 @@ def check_python_version():
 
 def install_dependencies():
     """Install all required dependencies."""
-    print("🚀 Installing Masquerade Dependencies")
+    print("🚀 Installing Secure AI Dependencies")
     print("=" * 50)
     
     # Check Python version
@@ -104,7 +104,7 @@ def verify_installation():
 
 def main():
     """Main installation function."""
-    print("🚀 Masquerade Dependency Installer")
+    print("🚀 Secure AI Dependency Installer")
     print("=" * 50)
     
     # Install dependencies

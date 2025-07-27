@@ -44,20 +44,20 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: masquerade-mcp
+  name: secureai-mcp
   namespace: ai-privacy-shield
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: masquerade-mcp
+      app: secureai-mcp
   template:
     metadata:
       labels:
-        app: masquerade-mcp
+        app: secureai-mcp
     spec:
       containers:
-      - name: masquerade-mcp
+      - name: secureai-mcp
         image: ai-privacy-shield:latest
         ports:
         - containerPort: 8000
@@ -85,9 +85,9 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: 'masquerade-mcp'
+  - job_name: 'secureai-mcp'
     static_configs:
-      - targets: ['masquerade-mcp:8000']
+      - targets: ['secureai-mcp:8000']
 ```
 
 ### 2. Grafana Dashboards

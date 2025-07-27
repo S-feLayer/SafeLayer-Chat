@@ -1,15 +1,15 @@
-# AI Privacy Shield - Masquerade MCP Integration Guide
+# AI Privacy Shield - Secure AI MCP Integration Guide
 
 ## Overview
-This guide explains how to integrate Masquerade MCP into your AI Privacy Shield product.
+This guide explains how to integrate Secure AI MCP into your AI Privacy Shield product.
 
 ## Quick Start
 
 ### 1. Installation
 ```bash
 # Clone the repository
-git clone https://github.com/postralai/masquerade.git
-cd masquerade
+git clone https://github.com/postralai/secureai.git
+cd secureai
 
 # Install dependencies
 pip install -r requirements.txt
@@ -21,7 +21,7 @@ cp .env.example .env
 
 ### 2. Basic Usage
 ```python
-from masquerade import redact_text, redact_content
+from secureai import redact_text, redact_content
 
 # Redact text content
 result = redact_text("Hello, my email is john.doe@example.com")
@@ -35,7 +35,7 @@ print(result["redacted_file_path"])
 ### 3. MCP Server Integration
 ```python
 # Start MCP server
-python src/masquerade/mcp_universal_redaction.py
+python src/secureai/mcp_universal_redaction.py
 
 # Configure Claude Desktop
 # Add to claude_desktop_config.json:
@@ -73,9 +73,9 @@ redact_pdf(pdf_path: str, output_path: str = None) -> dict
 
 ### Environment Variables
 - `TINFOIL_API_KEY`: Your Tinfoil API key
-- `MASQUERADE_ENV`: Environment (development/production)
-- `MASQUERADE_LOG_LEVEL`: Logging level
-- `MASQUERADE_CACHE_DIR`: Cache directory
+- `SECUREAI_ENV`: Environment (development/production)
+- `SECUREAI_LOG_LEVEL`: Logging level
+- `SECUREAI_CACHE_DIR`: Cache directory
 
 ### Production Settings
 - Enable logging to file
@@ -97,7 +97,7 @@ curl http://localhost:8000/metrics
 
 ### Logs
 ```bash
-tail -f logs/masquerade.log
+tail -f logs/secureai.log
 ```
 
 ## Troubleshooting
@@ -109,6 +109,6 @@ tail -f logs/masquerade.log
 4. **Performance Issues**: Use regex-only mode for high volume
 
 ### Support
-- Check logs in `logs/masquerade.log`
+- Check logs in `logs/secureai.log`
 - Review monitoring metrics
 - Contact support team

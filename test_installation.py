@@ -11,21 +11,21 @@ def test_imports():
     print("Testing imports...")
     
     try:
-        import masquerade
+        import secureai
         print("secureai imported successfully")
     except ImportError as e:
         print(f"Failed to import secureai: {e}")
         return False
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.tinfoil_llm import TinfoilLLM
         print("TinfoilLLM imported successfully")
     except ImportError as e:
         print(f"Failed to import TinfoilLLM: {e}")
         return False
     
     try:
-        from masquerade import redact_content
+        from secureai import redact_content
         print("redact_content imported successfully")
     except ImportError as e:
         print(f"Failed to import redact_content: {e}")
@@ -38,7 +38,7 @@ def test_basic_functionality():
     print("\nTesting basic functionality...")
     
     try:
-        from masquerade import redact_text
+        from secureai import redact_text
         
         # Test simple text redaction (without AI for basic test)
         test_text = "Hello, my name is John Doe and my email is john.doe@example.com"

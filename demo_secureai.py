@@ -14,21 +14,21 @@ def demo_imports():
     print("=" * 50)
     
     try:
-        import masquerade
+        import secureai
         print("✓ SecureAI package imported successfully")
     except ImportError as e:
         print(f"✗ Failed to import SecureAI: {e}")
         return False
     
     try:
-        from masquerade import redact_content, get_supported_formats
+        from secureai import redact_content, get_supported_formats
         print("✓ Core redaction functions imported")
     except ImportError as e:
         print(f"✗ Failed to import core functions: {e}")
         return False
     
     try:
-        from masquerade.redact_content import detect_content_type
+        from secureai.redact_content import detect_content_type
         print("✓ Content type detection imported")
     except ImportError as e:
         print(f"✗ Failed to import content detection: {e}")
@@ -42,7 +42,7 @@ def demo_supported_formats():
     print("=" * 50)
     
     try:
-        from masquerade import get_supported_formats
+        from secureai import get_supported_formats
         formats = get_supported_formats()
         
         for format_type, extensions in formats.items():
@@ -64,7 +64,7 @@ def demo_content_detection():
     print("=" * 50)
     
     try:
-        from masquerade.redact_content import detect_content_type
+        from secureai.redact_content import detect_content_type
         
         test_cases = [
             ("Hello world", "text"),
@@ -131,7 +131,7 @@ def demo_api_integration():
         print("  Set TINFOIL_API_KEY environment variable to test AI features")
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.tinfoil_llm import TinfoilLLM
         print("✓ TinfoilLLM module available")
     except ImportError:
         print("✗ TinfoilLLM module not available")
@@ -145,7 +145,7 @@ def demo_next_steps():
     
     print("1. Run PowerShell as Administrator")
     print("2. Navigate to project directory:")
-    print("   cd C:\\Users\\adria\\Downloads\\masquerade-main")
+    print("   cd C:\\Users\\adria\\Downloads\\secureai-main")
     print("3. Set API key:")
     print("   $env:TINFOIL_API_KEY='tk_WC48lzpUM12DFaYKPm4f65FWLGxRgVyc17EduuZRvQ440gi9'")
     print("4. Test full functionality:")

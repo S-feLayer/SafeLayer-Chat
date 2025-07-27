@@ -1,8 +1,8 @@
-from masquerade.get_pdf_text import get_pdf_text
-from masquerade.get_sensitive_data import get_sensitive_data, post_process_sensitive_data
-from masquerade.assign_new_values import assign_new_value_with_llm
-from masquerade.replace_text_pdf_spire import create_pdfs
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai.get_pdf_text import get_pdf_text
+from secureai.get_sensitive_data import get_sensitive_data, post_process_sensitive_data
+from secureai.assign_new_values import assign_new_value_with_llm
+from secureai.replace_text_pdf_spire import create_pdfs
+from secureai.tinfoil_llm import TinfoilLLM
 
 PDF_PATH = "insurance_offer.pdf"
 

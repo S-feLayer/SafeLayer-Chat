@@ -25,7 +25,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 3. **Or Install Manually**:
 ```powershell
 python3 -m pip install -r requirements.txt
-python3 -m pip install git+https://github.com/postralai/masquerade@main
+python3 -m pip install git+https://github.com/postralai/secureai@main
 ```
 
 4. **Set API Key** (optional, for full AI features):
@@ -206,9 +206,9 @@ export_data = shield.export_entity_mappings(
 
 ### Common Issues
 
-1. **"No module named 'masquerade'"**
+1. **"No module named 'secureai'"**
    ```powershell
-   python3 -m pip install git+https://github.com/postralai/masquerade@main
+   python3 -m pip install git+https://github.com/postralai/secureai@main
    ```
 
 2. **PowerShell Execution Policy Error**

@@ -1,10 +1,10 @@
-# Testing Guide for Masquerade
+# Testing Guide for Secure AI
 
-This guide covers how to test the Masquerade universal redaction system effectively, including unit tests, integration tests, performance benchmarks, and manual testing procedures.
+This guide covers how to test the Secure AI universal redaction system effectively, including unit tests, integration tests, performance benchmarks, and manual testing procedures.
 
 ## 🧪 Testing Overview
 
-Masquerade includes multiple testing approaches to ensure reliability, performance, and correctness:
+Secure AI includes multiple testing approaches to ensure reliability, performance, and correctness:
 
 1. **Unit Tests**: Test individual components and functions
 2. **Integration Tests**: Test complete workflows end-to-end
@@ -99,7 +99,7 @@ Unit tests focus on individual components:
 
 #### Content Type Detection
 ```python
-from masquerade.redact_content import detect_content_type
+from secureai.redact_content import detect_content_type
 
 # Test PDF detection
 assert detect_content_type("document.pdf") == "pdf"
@@ -113,7 +113,7 @@ assert detect_content_type("This is text") == "text"
 
 #### Language Detection
 ```python
-from masquerade.redact_code import detect_language
+from secureai.redact_code import detect_language
 
 # Test various file types
 assert detect_language("script.py") == "python"
@@ -123,7 +123,7 @@ assert detect_language("Main.java") == "java"
 
 #### Supported Formats
 ```python
-from masquerade import get_supported_formats
+from secureai import get_supported_formats
 
 formats = get_supported_formats()
 assert "pdf" in formats
@@ -137,8 +137,8 @@ Integration tests verify complete workflows:
 
 #### Text Redaction Workflow
 ```python
-from masquerade import redact_text
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_text
+from secureai.tinfoil_llm import TinfoilLLM
 
 tinfoil_llm = TinfoilLLM()
 text = "Hello John Doe, my email is john@example.com"
@@ -150,7 +150,7 @@ assert result["redaction_result"]["redaction_count"] > 0
 
 #### Code Redaction Workflow
 ```python
-from masquerade import redact_code_file
+from secureai import redact_code_file
 
 # Create test file
 with open("test_config.py", "w") as f:
@@ -163,7 +163,7 @@ assert result["redaction_result"]["language"] == "python"
 
 #### Universal Redaction Workflow
 ```python
-from masquerade import redact_content
+from secureai import redact_content
 
 # Test with text
 result = redact_content("Hello John", tinfoil_llm)
@@ -211,8 +211,8 @@ Test with various text inputs:
 ```bash
 # Simple text
 python -c "
-from masquerade import redact_text
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_text
+from secureai.tinfoil_llm import TinfoilLLM
 tinfoil_llm = TinfoilLLM()
 result = redact_text('Hello John, my email is john@example.com', tinfoil_llm)
 print(result)
@@ -230,8 +230,8 @@ echo 'const config = { apiKey: "sk-test456" };' > test_config.js
 
 # Test Python file
 python -c "
-from masquerade import redact_code_file
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_code_file
+from secureai.tinfoil_llm import TinfoilLLM
 tinfoil_llm = TinfoilLLM()
 result = redact_code_file('test_config.py', tinfoil_llm)
 print(result)
@@ -245,8 +245,8 @@ Test with PDF files (if available):
 ```bash
 # Test PDF redaction
 python -c "
-from masquerade import redact_pdf
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_pdf
+from secureai.tinfoil_llm import TinfoilLLM
 tinfoil_llm = TinfoilLLM()
 result = redact_pdf('test_document.pdf', tinfoil_llm)
 print(result)
@@ -268,12 +268,12 @@ export TINFOIL_API_KEY="your_api_key_here"
 
 #### 2. Import Errors
 ```
-ImportError: No module named 'masquerade'
+ImportError: No module named 'secureai'
 ```
 **Solution**: Ensure you're in the correct directory:
 ```bash
 cd src/scripts
-python -c "import sys; sys.path.insert(0, '..'); import masquerade"
+python -c "import sys; sys.path.insert(0, '..'); import secureai"
 ```
 
 #### 3. File Permission Errors
@@ -297,7 +297,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 # Run tests with debug output
-from masquerade import redact_content
+from secureai import redact_content
 result = redact_content(test_data, tinfoil_llm)
 ```
 

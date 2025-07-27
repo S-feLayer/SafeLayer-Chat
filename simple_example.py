@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 def simple_redaction_example():
     """Show a simple redaction example."""
-    print("🛡️ Simple SecureAI Example")
+    print(" Simple SecureAI Example")
     print("=" * 50)
     
     # Example content with PII
@@ -68,7 +68,7 @@ def file_processing_example():
 
 def conversation_example():
     """Show conversation persistence."""
-    print("\n💬 Conversation Persistence Example")
+    print("\n Conversation Persistence Example")
     print("=" * 50)
     
     conversation = [
@@ -103,7 +103,7 @@ def main():
     print("\n" + "=" * 60)
     print("To use the full system with AI-powered detection:")
     print("1. Install dependencies: pip install -r requirements.txt")
-    print("2. Install masquerade: pip install git+https://github.com/postralai/masquerade@main")
+    print("2. Install secureai: pip install git+https://github.com/postralai/secureai@main")
     print("3. Set API key: $env:TINFOIL_API_KEY='your_key'")
     print("4. Run: python3 src/scripts/ai_privacy_shield_demo.py")
 

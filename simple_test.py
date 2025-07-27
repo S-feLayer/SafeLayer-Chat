@@ -14,14 +14,14 @@ def test_imports():
     print("Testing imports...")
     
     try:
-        import masquerade
+        import secureai
         print("✓ SecureAI package imported successfully")
     except ImportError as e:
         print(f"✗ Failed to import SecureAI: {e}")
         return False
     
     try:
-        from masquerade import redact_content, get_supported_formats
+        from secureai import redact_content, get_supported_formats
         print("✓ Core functions imported successfully")
     except ImportError as e:
         print(f"✗ Failed to import core functions: {e}")
@@ -34,7 +34,7 @@ def test_supported_formats():
     print("\nTesting supported formats...")
     
     try:
-        from masquerade import get_supported_formats
+        from secureai import get_supported_formats
         formats = get_supported_formats()
         print(f"✓ Supported formats: {formats}")
         return True
@@ -47,7 +47,7 @@ def test_content_type_detection():
     print("\nTesting content type detection...")
     
     try:
-        from masquerade.redact_content import detect_content_type
+        from secureai.redact_content import detect_content_type
         
         # Test different content types
         test_cases = [
@@ -101,7 +101,7 @@ def test_basic_redaction():
     
     try:
         # This will test the function structure without requiring API
-        from masquerade import redact_content
+        from secureai import redact_content
         
         # Create a simple test file
         test_file = Path("test_files/simple_test.txt")

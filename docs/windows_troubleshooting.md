@@ -129,7 +129,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
 2. **Temporary workaround (not recommended for production):**
    ```powershell
-   python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org git+https://github.com/postralai/masquerade@main
+   python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org git+https://github.com/postralai/secureai@main
    ```
 
 ## Network Issues
@@ -140,7 +140,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 **Solutions:**
 1. **Configure pip proxy:**
    ```powershell
-   python -m pip install --proxy http://proxy.company.com:8080 git+https://github.com/postralai/masquerade@main
+   python -m pip install --proxy http://proxy.company.com:8080 git+https://github.com/postralai/secureai@main
    ```
 
 2. **Set environment variables:**
@@ -168,12 +168,12 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 **Solutions:**
 1. **Use faster mirrors:**
    ```powershell
-   python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple git+https://github.com/postralai/masquerade@main
+   python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple git+https://github.com/postralai/secureai@main
    ```
 
 2. **Use conda instead of pip:**
    ```powershell
-   conda install -c conda-forge masquerade
+   conda install -c conda-forge secureai
    ```
 
 ### Memory Issues
@@ -219,7 +219,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
 2. **Check MCP file path:**
    ```powershell
-   python -c "import masquerade as m; print(f'{m.__path__[0]}/mcp_universal_redaction.py')"
+   python -c "import secureai as m; print(f'{m.__path__[0]}/mcp_universal_redaction.py')"
    ```
 
 3. **Verify configuration:**
@@ -228,7 +228,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
      "mcpServers": {
        "universal-redaction": {
          "command": "C:\\path\\to\\pdfmcp\\Scripts\\python.exe",
-         "args": ["C:\\path\\to\\masquerade\\mcp_universal_redaction.py"],
+         "args": ["C:\\path\\to\\secureai\\mcp_universal_redaction.py"],
          "env": {
            "TINFOIL_API_KEY": "your_api_key"
          }
@@ -251,7 +251,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
 2. **Reinstall packages:**
    ```powershell
-   python -m pip install --force-reinstall git+https://github.com/postralai/masquerade@main
+   python -m pip install --force-reinstall git+https://github.com/postralai/secureai@main
    ```
 
 ### Test File Permissions

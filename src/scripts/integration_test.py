@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Integration test script for Masquerade's complete workflow.
+Integration test script for Secure AI's complete workflow.
 Tests the entire pipeline from input to redacted output.
 """
 
@@ -45,8 +45,8 @@ class IntegrationTest:
         print(f"🔄 Testing: {test_name}")
         
         try:
-            from masquerade import redact_content
-            from masquerade.tinfoil_llm import TinfoilLLM
+            from secureai import redact_content
+            from secureai.tinfoil_llm import TinfoilLLM
             
             # Initialize Tinfoil LLM
             tinfoil_llm = TinfoilLLM()

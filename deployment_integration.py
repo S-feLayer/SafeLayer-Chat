@@ -96,7 +96,7 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \\
     CMD python -c "import requests; requests.get('http://localhost:8000/health')"
 
 # Run the application
-CMD ["python", "src/masquerade/mcp_universal_redaction.py"]
+CMD ["python", "src/secureai/mcp_universal_redaction.py"]
 """
     
     with open("Dockerfile", "w") as f:
@@ -281,8 +281,8 @@ This guide explains how to integrate SecureAI MCP into your AI Privacy Shield pr
 ### 1. Installation
 ```bash
 # Clone the repository
-git clone https://github.com/postralai/masquerade.git
-cd masquerade
+git clone https://github.com/postralai/secureai.git
+cd secureai
 
 # Install dependencies
 pip install -r requirements.txt
@@ -294,7 +294,7 @@ cp .env.example .env
 
 ### 2. Basic Usage
 ```python
-from masquerade import redact_text, redact_content
+from secureai import redact_text, redact_content
 
 # Redact text content
 result = redact_text("Hello, my email is john.doe@example.com")
@@ -308,7 +308,7 @@ print(result["redacted_file_path"])
 ### 3. MCP Server Integration
 ```python
 # Start MCP server
-python src/masquerade/mcp_universal_redaction.py
+python src/secureai/mcp_universal_redaction.py
 
 # Configure Claude Desktop
 # Add to claude_desktop_config.json:
@@ -536,7 +536,7 @@ def health_check():
         
         # Check if SecureAI modules can be imported
         try:
-            import masquerade
+            import secureai
             secureai_status = "healthy"
         except ImportError:
             secureai_status = "unhealthy"
@@ -581,10 +581,10 @@ if __name__ == "__main__":
     print(json.dumps(health, indent=2))
 """
     
-    with open("src/masquerade/health_check.py", "w") as f:
+    with open("src/secureai/health_check.py", "w") as f:
         f.write(health_check_code)
     
-    print("Health check module created: src/masquerade/health_check.py")
+    print("Health check module created: src/secureai/health_check.py")
 
 def create_deployment_package():
     """Create deployment package."""

@@ -119,7 +119,7 @@ def demonstrate_basic_redaction():
     print("=" * 50)
     
     try:
-        from masquerade.ai_privacy_shield import AIPrivacyShield
+        from secureai.ai_privacy_shield import AIPrivacyShield
         
         # Initialize shield without persistence for basic demo
         shield = AIPrivacyShield(enable_persistence=False)
@@ -152,7 +152,7 @@ def demonstrate_entity_persistence():
     print("=" * 50)
     
     try:
-        from masquerade.ai_privacy_shield import AIPrivacyShield
+        from secureai.ai_privacy_shield import AIPrivacyShield
         
         # Initialize shield with persistence
         shield = AIPrivacyShield(enable_persistence=True)
@@ -198,7 +198,7 @@ def demonstrate_technical_redaction():
     print("=" * 50)
     
     try:
-        from masquerade.ai_privacy_shield import AIPrivacyShield
+        from secureai.ai_privacy_shield import AIPrivacyShield
         
         shield = AIPrivacyShield(enable_persistence=True)
         
@@ -223,7 +223,7 @@ def demonstrate_healthcare_compliance():
     print("=" * 50)
     
     try:
-        from masquerade.ai_privacy_shield import AIPrivacyShield
+        from secureai.ai_privacy_shield import AIPrivacyShield
         
         shield = AIPrivacyShield(enable_persistence=True)
         
@@ -248,7 +248,7 @@ def demonstrate_enterprise_api():
     print("=" * 50)
     
     try:
-        from masquerade.ai_privacy_shield import EnterprisePrivacyAPI
+        from secureai.ai_privacy_shield import EnterprisePrivacyAPI
         
         # Initialize enterprise API
         api = EnterprisePrivacyAPI(
@@ -293,7 +293,7 @@ def demonstrate_performance_metrics():
     print("=" * 50)
     
     try:
-        from masquerade.ai_privacy_shield import AIPrivacyShield
+        from secureai.ai_privacy_shield import AIPrivacyShield
         import time
         
         shield = AIPrivacyShield(enable_persistence=False)
@@ -327,7 +327,7 @@ def demonstrate_compliance_features():
     print("=" * 50)
     
     try:
-        from masquerade.ai_privacy_shield import AIPrivacyShield
+        from secureai.ai_privacy_shield import AIPrivacyShield
         
         shield = AIPrivacyShield(enable_persistence=True)
         

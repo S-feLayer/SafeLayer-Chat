@@ -2,7 +2,7 @@
 """
 PII Detection Demonstration Script
 
-This script demonstrates Masquerade's comprehensive PII detection capabilities
+This script demonstrates Secure AI's comprehensive PII detection capabilities
 for preventing data leakage across different content types.
 """
 
@@ -13,8 +13,8 @@ from typing import Dict, List, Any
 # Add src to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from masquerade.enhanced_detection import EnhancedDetection
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai.enhanced_detection import EnhancedDetection
+from secureai.tinfoil_llm import TinfoilLLM
 
 def create_test_content() -> Dict[str, str]:
     """Create test content with various types of PII."""
@@ -187,7 +187,7 @@ def demonstrate_data_leakage_prevention():
     print("=" * 50)
     
     print("""
-    Masquerade prevents data leakage through multiple layers:
+    Secure AI prevents data leakage through multiple layers:
     
     1. 🔍 COMPREHENSIVE DETECTION
        • Pattern-based detection for known PII formats
@@ -218,7 +218,7 @@ def demonstrate_data_leakage_prevention():
 def main():
     """Main demonstration function."""
     
-    print("🛡️ MASQUERADE PII DETECTION DEMONSTRATION")
+    print("🛡️ SECUREAI PII DETECTION DEMONSTRATION")
     print("=" * 60)
     print("Comprehensive PII detection to prevent data leakage")
     print("=" * 60)

@@ -1,4 +1,4 @@
-# AI Privacy Shield - Masquerade MCP
+# AI Privacy Shield - Secure AI MCP
 FROM python:3.12-slim
 
 # Set working directory
@@ -23,7 +23,7 @@ RUN mkdir -p logs cache test_files
 
 # Set environment variables
 ENV PYTHONPATH=/app/src
-ENV MASQUERADE_ENV=production
+ENV SECUREAI_ENV=production
 
 # Expose port
 EXPOSE 8000
@@ -33,4 +33,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import requests; requests.get('http://localhost:8000/health')"
 
 # Run the application
-CMD ["python", "src/masquerade/mcp_universal_redaction.py"]
+CMD ["python", "src/secureai/mcp_universal_redaction.py"]

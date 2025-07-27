@@ -51,7 +51,7 @@ This guide shows you how to integrate SecureAI's superior PII detection into you
 #### **Step 1: Install SecureAI Dependencies**
 ```bash
 # Install the required packages
-pip install git+https://github.com/postralai/masquerade@main
+pip install git+https://github.com/postralai/secureai@main
 pip install fastmcp==0.4.1 mcp==1.3.0
 ```
 
@@ -509,7 +509,7 @@ custom_rules = {
 
 ### **1. Install Dependencies**
 ```bash
-pip install git+https://github.com/postralai/masquerade@main
+pip install git+https://github.com/postralai/secureai@main
 pip install fastapi uvicorn requests
 ```
 

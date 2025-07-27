@@ -1,6 +1,6 @@
  # AI Model Integration Guide
 
-This guide shows how to use Masquerade with Tinfoil for redaction before sending content to other AI models like ChatGPT, Grok, or Gemini.
+This guide shows how to use Secure AI with Tinfoil for redaction before sending content to other AI models like ChatGPT, Grok, or Gemini.
 
 ## 🔄 **Workflow Overview**
 
@@ -20,8 +20,8 @@ Sensitive Content → Tinfoil Redaction → Clean Content → Other AI Models
 ### **Basic Integration Pattern**
 
 ```python
-from masquerade import redact_content
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_content
+from secureai.tinfoil_llm import TinfoilLLM
 import openai  # or any other AI library
 
 # Initialize
@@ -50,8 +50,8 @@ if redaction_result["success"]:
 
 ```python
 import openai
-from masquerade import redact_content
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_content
+from secureai.tinfoil_llm import TinfoilLLM
 
 def analyze_with_chatgpt(sensitive_content: str, api_key: str) -> str:
     """
@@ -109,8 +109,8 @@ print(result["analysis"])
 ```python
 # Hypothetical Grok API (replace with actual implementation)
 import grok_api
-from masquerade import redact_content
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_content
+from secureai.tinfoil_llm import TinfoilLLM
 
 def analyze_with_grok(sensitive_content: str, api_key: str) -> str:
     """
@@ -152,8 +152,8 @@ def analyze_with_grok(sensitive_content: str, api_key: str) -> str:
 
 ```python
 import google.generativeai as genai
-from masquerade import redact_content
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_content
+from secureai.tinfoil_llm import TinfoilLLM
 
 def analyze_with_gemini(sensitive_content: str, api_key: str) -> str:
     """
@@ -194,8 +194,8 @@ def analyze_with_gemini(sensitive_content: str, api_key: str) -> str:
 
 ```python
 import anthropic
-from masquerade import redact_content
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_content
+from secureai.tinfoil_llm import TinfoilLLM
 
 def analyze_with_claude(sensitive_content: str, api_key: str) -> str:
     """
@@ -332,8 +332,8 @@ def batch_ai_analysis(content_list: list, ai_model: str, api_key: str) -> list:
 ```python
 import asyncio
 import aiohttp
-from masquerade import redact_content
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_content
+from secureai.tinfoil_llm import TinfoilLLM
 
 async def real_time_ai_analysis(sensitive_content: str, ai_endpoint: str, api_key: str):
     """
@@ -468,8 +468,8 @@ def optimized_ai_analysis(content: str, ai_model: str, api_key: str):
 
 ```python
 import concurrent.futures
-from masquerade import redact_content
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai import redact_content
+from secureai.tinfoil_llm import TinfoilLLM
 
 def parallel_ai_analysis(content_list: list, ai_models: list, api_keys: dict):
     """

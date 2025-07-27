@@ -15,7 +15,7 @@ The proxy service allows you to:
 ### **1. Basic Setup**
 
 ```python
-from masquerade.proxy_redaction_service import ProxyRedactionService
+from secureai.proxy_redaction_service import ProxyRedactionService
 
 # Initialize with your Tinfoil API key
 proxy_service = ProxyRedactionService(
@@ -34,7 +34,7 @@ result = proxy_service.redact_content(
 ### **2. Simple API Wrapper**
 
 ```python
-from masquerade.proxy_redaction_service import SimpleProxyAPI
+from secureai.proxy_redaction_service import SimpleProxyAPI
 
 # Create simple API
 api = SimpleProxyAPI("your_tinfoil_api_key_here")
@@ -52,7 +52,7 @@ stats = api.stats("user_123")
 
 ```python
 from flask import Flask, request, jsonify
-from masquerade.proxy_redaction_service import ProxyRedactionService
+from secureai.proxy_redaction_service import ProxyRedactionService
 import os
 
 app = Flask(__name__)
@@ -110,7 +110,7 @@ if __name__ == '__main__':
 ```python
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from masquerade.proxy_redaction_service import ProxyRedactionService
+from secureai.proxy_redaction_service import ProxyRedactionService
 import os
 
 app = FastAPI(title="Proxy Redaction Service")
@@ -171,7 +171,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 import json
 import os
-from masquerade.proxy_redaction_service import ProxyRedactionService
+from secureai.proxy_redaction_service import ProxyRedactionService
 
 # Initialize proxy service
 proxy_service = ProxyRedactionService(
@@ -335,7 +335,7 @@ spec:
 # lambda_function.py
 import json
 import os
-from masquerade.proxy_redaction_service import ProxyRedactionService
+from secureai.proxy_redaction_service import ProxyRedactionService
 
 # Initialize proxy service
 proxy_service = ProxyRedactionService(

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test script for Masquerade's universal redaction functionality.
+Test script for Secure AI's universal redaction functionality.
 This script tests all the new features to ensure they work correctly.
 """
 
@@ -9,7 +9,7 @@ import tempfile
 import sys
 from pathlib import Path
 
-# Add the src directory to the path so we can import masquerade
+# Add the src directory to the path so we can import secureai
 src_path = Path(__file__).parent.parent
 sys.path.insert(0, str(src_path))
 
@@ -18,16 +18,16 @@ def test_imports():
     print("🧪 Testing imports...")
     
     try:
-        from masquerade import redact_content, redact_pdf, redact_text, redact_code_file, get_supported_formats
+        from secureai import redact_content, redact_pdf, redact_text, redact_code_file, get_supported_formats
         print("✅ All main functions imported successfully")
         
-        from masquerade.redact_content import detect_content_type, extract_input_data
+        from secureai.redact_content import detect_content_type, extract_input_data
         print("✅ Content detection functions imported successfully")
         
-        from masquerade.redact_code import CODE_EXTENSIONS, detect_language
+        from secureai.redact_code import CODE_EXTENSIONS, detect_language
         print("✅ Code redaction functions imported successfully")
         
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.tinfoil_llm import TinfoilLLM
         print("✅ Tinfoil LLM imported successfully")
         
         return True
@@ -39,7 +39,7 @@ def test_content_type_detection():
     """Test content type detection functionality."""
     print("\n🧪 Testing content type detection...")
     
-    from masquerade.redact_content import detect_content_type
+    from secureai.redact_content import detect_content_type
     
     # Create a temporary file for testing
     with tempfile.NamedTemporaryFile(suffix='.py', delete=False) as f:
@@ -84,7 +84,7 @@ def test_supported_formats():
     """Test the supported formats function."""
     print("\n🧪 Testing supported formats...")
     
-    from masquerade import get_supported_formats
+    from secureai import get_supported_formats
     
     try:
         formats = get_supported_formats()
@@ -114,7 +114,7 @@ def test_code_language_detection():
     """Test code language detection."""
     print("\n🧪 Testing code language detection...")
     
-    from masquerade.redact_code import detect_language
+    from secureai.redact_code import detect_language
     
     try:
         # Test various file extensions
@@ -136,7 +136,7 @@ def test_tinfoil_initialization():
     print("\n🧪 Testing Tinfoil LLM initialization...")
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.tinfoil_llm import TinfoilLLM
         
         # This will fail if TINFOIL_API_KEY is not set, which is expected
         tinfoil_llm = TinfoilLLM()
@@ -152,7 +152,7 @@ def test_tinfoil_initialization():
 
 def run_all_tests():
     """Run all tests and report results."""
-    print("🚀 Running Masquerade Universal Redaction Tests")
+    print("🚀 Running Secure AI Universal Redaction Tests")
     print("=" * 60)
     
     tests = [

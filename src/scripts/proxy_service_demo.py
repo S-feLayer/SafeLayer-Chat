@@ -14,7 +14,7 @@ from typing import Dict, Any
 # Add src to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from masquerade.proxy_redaction_service import ProxyRedactionService, SimpleProxyAPI
+from secureai.proxy_redaction_service import ProxyRedactionService, SimpleProxyAPI
 
 def demonstrate_proxy_service():
     """Demonstrate the proxy redaction service."""
@@ -209,7 +209,7 @@ def demonstrate_web_integration():
     1. FLASK INTEGRATION:
     ```python
     from flask import Flask, request, jsonify
-    from masquerade.proxy_redaction_service import ProxyRedactionService
+    from secureai.proxy_redaction_service import ProxyRedactionService
     
     # Initialize service (you provide the API key)
     proxy_service = ProxyRedactionService(os.getenv("TINFOIL_API_KEY"))
@@ -233,7 +233,7 @@ def demonstrate_web_integration():
     ```python
     from fastapi import FastAPI
     from pydantic import BaseModel
-    from masquerade.proxy_redaction_service import ProxyRedactionService
+    from secureai.proxy_redaction_service import ProxyRedactionService
     
     app = FastAPI()
     proxy_service = ProxyRedactionService(os.getenv("TINFOIL_API_KEY"))
@@ -258,7 +258,7 @@ def demonstrate_web_integration():
     from django.views.decorators.csrf import csrf_exempt
     from django.views.decorators.http import require_http_methods
     import json
-    from masquerade.proxy_redaction_service import ProxyRedactionService
+    from secureai.proxy_redaction_service import ProxyRedactionService
     
     proxy_service = ProxyRedactionService(os.getenv("TINFOIL_API_KEY"))
     

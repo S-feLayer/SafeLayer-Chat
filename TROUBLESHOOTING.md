@@ -1,6 +1,6 @@
 # Troubleshooting Guide
 
-This guide helps resolve common issues when setting up and testing Masquerade.
+This guide helps resolve common issues when setting up and testing Secure AI.
 
 ## 🐛 Common Issues and Solutions
 
@@ -50,12 +50,12 @@ set TINFOIL_API_KEY=your_api_key_here
 
 ### 4. **Import Errors**
 
-**Problem**: Can't import masquerade modules.
+**Problem**: Can't import secureai modules.
 
 **Solutions**:
 ```bash
 # Make sure you're in the project root
-cd /path/to/masquerade-main
+cd /path/to/secureai-main
 
 # Install the project in development mode
 pip install -e .
@@ -137,7 +137,7 @@ conda install -c conda-forge pymupdf
 **Solution**:
 ```bash
 # Run from project root
-cd /path/to/masquerade-main
+cd /path/to/secureai-main
 
 # Add src to Python path
 export PYTHONPATH="${PYTHONPATH}:$(pwd)/src"
@@ -198,8 +198,8 @@ python -c "import fitz, fastmcp, mcp, tinfoil; print('All imports successful')"
 ```bash
 # Run basic tests without AI processing
 python -c "
-from masquerade.redact_content import detect_content_type
-from masquerade.redact_code import detect_language
+from secureai.redact_content import detect_content_type
+from secureai.redact_code import detect_language
 print('Core functionality works')
 "
 ```
@@ -236,7 +236,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 # Run your code with debug output
-from masquerade import redact_content
+from secureai import redact_content
 ```
 
 ### **Minimal Test Case**
@@ -252,10 +252,10 @@ except ImportError as e:
     print(f"❌ PyMuPDF failed: {e}")
 
 try:
-    from masquerade.redact_content import detect_content_type
-    print("✅ Masquerade imports work")
+    from secureai.redact_content import detect_content_type
+    print("✅ Secure AI imports work")
 except ImportError as e:
-    print(f"❌ Masquerade imports failed: {e}")
+    print(f"❌ Secure AI imports failed: {e}")
 ```
 
 Run with: `python minimal_test.py` 

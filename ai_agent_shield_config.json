@@ -1,0 +1,49 @@
+{
+  "agent_types": {
+    "customer_service": {
+      "protection_level": "comprehensive",
+      "enable_persistence": true,
+      "custom_rules": {
+        "customer_data": true,
+        "order_details": true,
+        "payment_info": true,
+        "contact_info": true
+      }
+    },
+    "data_analysis": {
+      "protection_level": "enterprise",
+      "enable_persistence": true,
+      "custom_rules": {
+        "database_credentials": true,
+        "api_keys": true,
+        "sensitive_metrics": true,
+        "business_data": true
+      }
+    },
+    "automation": {
+      "protection_level": "basic",
+      "enable_persistence": false,
+      "custom_rules": {
+        "system_credentials": true,
+        "automation_paths": false,
+        "log_data": false
+      }
+    },
+    "chatbot": {
+      "protection_level": "standard",
+      "enable_persistence": true,
+      "custom_rules": {
+        "conversation_context": true,
+        "user_preferences": true,
+        "personal_info": true
+      }
+    }
+  },
+  "global_settings": {
+    "tinfoil_api_key": "",
+    "enable_audit_logging": true,
+    "log_level": "INFO",
+    "cache_enabled": true,
+    "max_file_size": "100MB"
+  }
+}

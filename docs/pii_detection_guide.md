@@ -1,10 +1,10 @@
 # PII Detection Guide
 
-Masquerade provides comprehensive **PII (Personally Identifiable Information) detection** to prevent data leakage across all supported content types.
+Secure AI provides comprehensive **PII (Personally Identifiable Information) detection** to prevent data leakage across all supported content types.
 
 ## 🛡️ **Data Leakage Prevention**
 
-Masquerade acts as a **privacy firewall** that automatically detects and redacts sensitive information before it can be accidentally shared with AI models or other systems.
+Secure AI acts as a **privacy firewall** that automatically detects and redacts sensitive information before it can be accidentally shared with AI models or other systems.
 
 ### **Why PII Detection Matters**
 
@@ -95,8 +95,8 @@ Context-aware detection using Tinfoil's isolated AI (Llama 3.3 70B):
 ### **Basic PII Detection**
 
 ```python
-from masquerade.enhanced_detection import EnhancedDetection
-from masquerade.tinfoil_llm import TinfoilLLM
+from secureai.enhanced_detection import EnhancedDetection
+from secureai.tinfoil_llm import TinfoilLLM
 
 # Initialize
 tinfoil_llm = TinfoilLLM()

@@ -20,7 +20,7 @@ def test_llama_multilingual_detection():
     print("=" * 60)
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.tinfoil_llm import TinfoilLLM
         
         # Initialize with your API key
         api_key = "tk_WC48lzpUM12DFaYKPm4f65FWLGxRgVyc17EduuZRvQ440gi9"
@@ -156,7 +156,7 @@ def test_llama_conversation_context():
     print("=" * 60)
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.tinfoil_llm import TinfoilLLM
         
         api_key = "tk_WC48lzpUM12DFaYKPm4f65FWLGxRgVyc17EduuZRvQ440gi9"
         tinfoil_llm = TinfoilLLM(api_key)
@@ -223,7 +223,7 @@ def test_llama_vs_other_models():
     print("=" * 60)
     
     try:
-        from masquerade.tinfoil_llm import TinfoilLLM
+        from secureai.tinfoil_llm import TinfoilLLM
         
         api_key = "tk_WC48lzpUM12DFaYKPm4f65FWLGxRgVyc17EduuZRvQ440gi9"
         tinfoil_llm = TinfoilLLM(api_key)
