@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SecureAI MCP - Universal Privacy Firewall
 
 A production-ready universal privacy firewall for PDFs, code files, and text content that automatically detects and redacts sensitive data using AI-powered analysis.
@@ -287,3 +288,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Ready for Production**: This project includes comprehensive production deployment capabilities with monitoring, security, and scalability features.
+=======
+# SafeLayer-Chat
+A production-ready SDK and service for automatic detection and redaction of sensitive data from PDFs, code files, and text content. Built with AI-powered analysis to protect privacy while maintaining document integrity. Includes comprehensive API, command-line tools, and extensive documentation for easy integration into any project.
+>>>>>>> 4f5e3f8c5ba13567462764f1ea13baf9ab666a2a
