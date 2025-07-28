@@ -5,11 +5,11 @@
   },
   "scrape_configs": [
     {
-      "job_name": "secureai-mcp",
+      "job_name": "privacy-firewall-mcp",
       "static_configs": [
         {
           "targets": [
-            "secureai-mcp:8000"
+            "privacy-firewall-mcp:8000"
           ]
         }
       ],

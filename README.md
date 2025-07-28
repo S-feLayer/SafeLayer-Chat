@@ -1,4 +1,4 @@
-# SafeLayer-Chat - Universal Privacy Firewall
+# Privacy Firewall - Universal Content Protection
 
 A production-ready universal privacy firewall for PDFs, code files, and text content that automatically detects and redacts sensitive data using AI-powered analysis.
 
@@ -58,7 +58,7 @@ A production-ready universal privacy firewall for PDFs, code files, and text con
 pip install -r requirements.txt
 
 # Run locally
-python src/secure_AI/mcp_universal_redaction.py
+python src/privacy_firewall_core/mcp_universal_redaction.py
 ```
 
 ## Architecture
@@ -112,19 +112,19 @@ python src/secure_AI/mcp_universal_redaction.py
 ### Basic Redaction
 
 ```python
-from secureai import SecureAI
+from privacy_firewall import PrivacyFirewall
 
 # Initialize client
-secureai = SecureAI(api_key="your_key")
+firewall = PrivacyFirewall(api_key="your_key")
 
 # Redact PDF
-result = secureai.redact_pdf("document.pdf")
+result = firewall.redact_pdf("document.pdf")
 
 # Redact code
-result = secureai.redact_code("source.py")
+result = firewall.redact_code("source.py")
 
 # Redact text
-result = secureai.redact_text("sensitive content")
+result = firewall.redact_text("sensitive content")
 ```
 
 ### MCP Integration
@@ -158,11 +158,11 @@ async with ClientSession() as session:
 ```yaml
 # docker-compose.yml
 services:
-  secureai-mcp:
-    image: secureai-mcp:latest
+  privacy-firewall-mcp:
+    image: privacy-firewall-mcp:latest
     environment:
       - TINFOIL_API_KEY=${TINFOIL_API_KEY}
-      - SECUREAI_ENV=production
+      - PRIVACY_FIREWALL_ENV=production
     ports:
       - "8000:8000"
     volumes:

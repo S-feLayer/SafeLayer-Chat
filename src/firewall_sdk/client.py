@@ -16,9 +16,9 @@ from .models import RedactionResult, ProcessingOptions, SupportedFormats
 
 logger = logging.getLogger(__name__)
 
-class SecureAI:
+class PrivacyFirewall:
     """
-    SecureAI client for automatic content redaction.
+    Privacy Firewall client for automatic content redaction.
     
     This client provides a simple interface for redacting sensitive data
     from PDFs, code files, and text content using AI-powered detection.
@@ -32,12 +32,12 @@ class SecureAI:
         verify_ssl: bool = True
     ):
         """
-        Initialize the SecureAI client.
+        Initialize the Privacy Firewall client.
         
         Args:
             api_key: Tinfoil API key for AI analysis. If not provided, 
                     will try to get from TINFOIL_API_KEY environment variable.
-            base_url: Base URL for the SecureAI service
+            base_url: Base URL for the Privacy Firewall service
             timeout: Request timeout in seconds
             verify_ssl: Whether to verify SSL certificates
         """
@@ -53,10 +53,10 @@ class SecureAI:
         # Set up session headers
         self.session.headers.update({
             'Content-Type': 'application/json',
-            'User-Agent': f'SecureAI-SDK/1.0.0'
+            'User-Agent': f'PrivacyFirewall-SDK/1.0.0'
         })
         
-        logger.info(f"SecureAI client initialized with base URL: {self.base_url}")
+        logger.info(f"Privacy Firewall client initialized with base URL: {self.base_url}")
     
     def _make_request(self, endpoint: str, method: str = "GET", data: Optional[Dict] = None) -> Dict[str, Any]:
         """
@@ -95,7 +95,7 @@ class SecureAI:
     
     def health_check(self) -> Dict[str, Any]:
         """
-        Check the health status of the SecureAI service.
+        Check the health status of the Privacy Firewall service.
         
         Returns:
             Health status information

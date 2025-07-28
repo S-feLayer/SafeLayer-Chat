@@ -17,18 +17,18 @@ def read_requirements():
         return [line.strip() for line in fh if line.strip() and not line.startswith("#")]
 
 setup(
-    name="secureai-sdk",
+    name="privacy-firewall-sdk",
     version="1.0.0",
-    author="SecureAI Team",
-    author_email="support@secureai.com",
+    author="Privacy Firewall Team",
+    author_email="support@privacyfirewall.com",
     description="Universal Privacy Firewall SDK for PDFs, Code Files, and Text Content",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/secureai/secureai-sdk",
+    url="https://github.com/privacyfirewall/privacy-firewall-sdk",
     project_urls={
-        "Bug Tracker": "https://github.com/secureai/secureai-sdk/issues",
-        "Documentation": "https://docs.secureai.com",
-        "Source Code": "https://github.com/secureai/secureai-sdk",
+        "Bug Tracker": "https://github.com/privacyfirewall/privacy-firewall-sdk/issues",
+        "Documentation": "https://docs.privacyfirewall.com",
+        "Source Code": "https://github.com/privacyfirewall/privacy-firewall-sdk",
     },
     packages=find_packages(where="src"),
     package_dir={"": "src"},
@@ -66,7 +66,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "secureai=secureai_sdk.cli:main",
+            "privacyfirewall=firewall_sdk.cli:main",
         ],
     },
     include_package_data=True,

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# AI Privacy Shield - Production Deployment Script
+# Privacy Firewall - Production Deployment Script
 # This script handles complete production deployment with security and monitoring
 
 set -e  # Exit on any error
@@ -13,11 +13,11 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Configuration
-PROJECT_NAME="secureai-dataloss"
-DOCKER_IMAGE_NAME="secureai-mcp"
+PROJECT_NAME="privacy-firewall"
+DOCKER_IMAGE_NAME="privacy-firewall-mcp"
 DOCKER_TAG="latest"
-CONTAINER_NAME="secureai-mcp-prod"
-NETWORK_NAME="secureai-network"
+CONTAINER_NAME="privacy-firewall-mcp-prod"
+NETWORK_NAME="privacy-firewall-network"
 
 # Logging
 LOG_FILE="logs/deployment.log"

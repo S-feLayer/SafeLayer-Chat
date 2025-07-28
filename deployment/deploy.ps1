@@ -1,4 +1,4 @@
-# AI Privacy Shield - Production Deployment Script (PowerShell)
+# Privacy Firewall - Production Deployment Script (PowerShell)
 # This script handles complete production deployment with security and monitoring
 
 param(
@@ -8,11 +8,11 @@ param(
 )
 
 # Configuration
-$PROJECT_NAME = "secureai-dataloss"
-$DOCKER_IMAGE_NAME = "secureai-mcp"
+$PROJECT_NAME = "privacy-firewall"
+$DOCKER_IMAGE_NAME = "privacy-firewall-mcp"
 $DOCKER_TAG = "latest"
-$CONTAINER_NAME = "secureai-mcp-prod"
-$NETWORK_NAME = "secureai-network"
+$CONTAINER_NAME = "privacy-firewall-mcp-prod"
+$NETWORK_NAME = "privacy-firewall-network"
 
 # Logging
 $LOG_FILE = "logs/deployment.log"

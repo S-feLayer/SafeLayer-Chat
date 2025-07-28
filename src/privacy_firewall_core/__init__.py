@@ -5,7 +5,7 @@ from .redact_content import redact_content, get_supported_formats
 
 try:
     import importlib.metadata
-    __version__ = importlib.metadata.version("secureai")
+    __version__ = importlib.metadata.version("privacy-firewall")
 except ImportError:
     __version__ = "unknown"
 

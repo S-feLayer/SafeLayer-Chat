@@ -21,7 +21,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Create a FastMCP server instance
-mcp = FastMCP(name="UniversalRedactionServer")
+mcp = FastMCP(name="PrivacyFirewallServer")
 tinfoil_llm = TinfoilLLM()
 
 # Track active connections
@@ -287,13 +287,13 @@ def metrics_endpoint():
     }
 
 # Startup logging
-logger.info("SecureAI MCP Server starting up...")
-logger.info(f"Environment: {os.getenv('SECUREAI_ENV', 'development')}")
+logger.info("Privacy Firewall MCP Server starting up...")
+logger.info(f"Environment: {os.getenv('PRIVACY_FIREWALL_ENV', 'development')}")
 logger.info(f"Tinfoil API Key configured: {'Yes' if os.getenv('TINFOIL_API_KEY') else 'No'}")
 
 if __name__ == "__main__":
     try:
-        logger.info("Starting SecureAI MCP Server...")
+        logger.info("Starting Privacy Firewall MCP Server...")
         mcp.run()
     except KeyboardInterrupt:
         logger.info("Server stopped by user")

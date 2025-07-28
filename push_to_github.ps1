@@ -1,98 +1,65 @@
-#!/usr/bin/env pwsh
-<#
-.SYNOPSIS
-    Push SafeLayer-Chat repository to GitHub
-    
-.DESCRIPTION
-    This script sets up Git and pushes the SafeLayer-Chat repository to GitHub.
-    It handles the initial setup, adds all files, and pushes to the target repository.
-#>
+# Privacy Firewall - GitHub Push Script
+# This script helps push the cleaned repository to GitHub
 
-param(
-    [string]$RepositoryUrl = "https://github.com/S-feLayer/SafeLayer-Chat.git",
-    [string]$Branch = "main"
-)
-
-Write-Host "🚀 SafeLayer-Chat GitHub Push Script" -ForegroundColor Green
+Write-Host "Privacy Firewall - GitHub Push Helper" -ForegroundColor Green
 Write-Host "=====================================" -ForegroundColor Green
 
-# Check if Git is available
+# Check if GitHub CLI is available
+$ghAvailable = $null
 try {
-    $gitVersion = git --version
-    Write-Host "✅ Git found: $gitVersion" -ForegroundColor Green
+    $ghAvailable = Get-Command gh -ErrorAction SilentlyContinue
 } catch {
-    Write-Host "❌ Git is not installed or not in PATH" -ForegroundColor Red
-    Write-Host "Please install Git from: https://git-scm.com/download/win" -ForegroundColor Yellow
-    Write-Host "After installation, restart PowerShell and run this script again." -ForegroundColor Yellow
-    exit 1
+    $ghAvailable = $null
 }
 
-# Check if we're in a Git repository
-if (Test-Path ".git") {
-    Write-Host "✅ Git repository already initialized" -ForegroundColor Green
-} else {
-    Write-Host "🔄 Initializing Git repository..." -ForegroundColor Yellow
-    git init
-}
-
-# Check current remote
-$currentRemote = git remote get-url origin 2>$null
-if ($currentRemote) {
-    Write-Host "📡 Current remote: $currentRemote" -ForegroundColor Cyan
-    if ($currentRemote -ne $RepositoryUrl) {
-        Write-Host "🔄 Updating remote URL..." -ForegroundColor Yellow
-        git remote set-url origin $RepositoryUrl
+if ($ghAvailable) {
+    Write-Host "GitHub CLI found! Using GitHub CLI to push..." -ForegroundColor Yellow
+    
+    # Initialize git repository if not already done
+    if (-not (Test-Path ".git")) {
+        Write-Host "Initializing git repository..." -ForegroundColor Yellow
+        git init
     }
+    
+    # Add all files
+    Write-Host "Adding all files to git..." -ForegroundColor Yellow
+    git add .
+    
+    # Commit changes
+    Write-Host "Committing changes..." -ForegroundColor Yellow
+    git commit -m "Complete repository cleanup and rebranding to Privacy Firewall
+
+- Removed 40+ unnecessary development files
+- Renamed all components to avoid copyright issues  
+- Updated package structure and naming
+- Enhanced .gitignore with comprehensive patterns
+- Updated all documentation and examples
+- Fixed Docker configuration and deployment scripts"
+    
+    # Create repository and push
+    Write-Host "Creating GitHub repository and pushing..." -ForegroundColor Yellow
+    gh repo create Privacy-Firewall --public --source=. --remote=origin --push
+    
 } else {
-    Write-Host "🔄 Adding remote origin..." -ForegroundColor Yellow
-    git remote add origin $RepositoryUrl
-}
-
-# Add all files
-Write-Host "📁 Adding all files to Git..." -ForegroundColor Yellow
-git add .
-
-# Check if there are changes to commit
-$status = git status --porcelain
-if ($status) {
-    Write-Host "💾 Committing changes..." -ForegroundColor Yellow
-    git commit -m "Add complete SafeLayer-Chat SDK implementation
-
-- Production-ready SDK package with clean API
-- Comprehensive documentation and tutorials
-- Command-line interface
-- Type-safe data models with Pydantic
-- Error handling and validation
-- Build and distribution tools
-- Usage examples and best practices"
-} else {
-    Write-Host "ℹ️  No changes to commit" -ForegroundColor Cyan
-}
-
-# Check if branch exists
-$currentBranch = git branch --show-current
-if ($currentBranch -ne $Branch) {
-    Write-Host "🔄 Creating/checking out $Branch branch..." -ForegroundColor Yellow
-    git checkout -b $Branch 2>$null
-}
-
-# Push to GitHub
-Write-Host "🚀 Pushing to GitHub..." -ForegroundColor Yellow
-try {
-    git push -u origin $Branch
-    Write-Host "✅ Successfully pushed to GitHub!" -ForegroundColor Green
-    Write-Host "📋 Repository URL: $RepositoryUrl" -ForegroundColor Cyan
-} catch {
-    Write-Host "❌ Failed to push to GitHub" -ForegroundColor Red
-    Write-Host "This might be due to:" -ForegroundColor Yellow
-    Write-Host "  - Authentication issues (check your GitHub credentials)" -ForegroundColor Yellow
-    Write-Host "  - Repository permissions" -ForegroundColor Yellow
-    Write-Host "  - Network connectivity" -ForegroundColor Yellow
+    Write-Host "GitHub CLI not found. Manual instructions:" -ForegroundColor Red
     Write-Host ""
-    Write-Host "Try running: git push -u origin $Branch" -ForegroundColor Cyan
+    Write-Host "1. Install Git from: https://git-scm.com/download/win" -ForegroundColor Yellow
+    Write-Host "2. Install GitHub CLI from: https://cli.github.com/" -ForegroundColor Yellow
+    Write-Host "3. Or manually upload to GitHub:" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "Manual Upload Steps:" -ForegroundColor Cyan
+    Write-Host "1. Go to https://github.com/new" -ForegroundColor White
+    Write-Host "2. Create a new repository named 'Privacy-Firewall'" -ForegroundColor White
+    Write-Host "3. Upload all files from this directory" -ForegroundColor White
+    Write-Host "4. Or use GitHub Desktop: https://desktop.github.com/" -ForegroundColor White
+    Write-Host ""
+    Write-Host "Repository Summary:" -ForegroundColor Green
+    Write-Host "- Cleaned up 40+ unnecessary files" -ForegroundColor White
+    Write-Host "- Renamed to Privacy Firewall branding" -ForegroundColor White
+    Write-Host "- Updated all documentation and examples" -ForegroundColor White
+    Write-Host "- Enhanced security and monitoring" -ForegroundColor White
 }
 
 Write-Host ""
-Write-Host "🎉 Setup complete!" -ForegroundColor Green
-Write-Host "Your SafeLayer-Chat repository is now available at:" -ForegroundColor Cyan
-Write-Host "https://github.com/S-feLayer/SafeLayer-Chat" -ForegroundColor Blue 
+Write-Host "Press any key to continue..." -ForegroundColor Gray
+$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown") 
