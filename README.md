@@ -265,13 +265,6 @@ docker-compose restart
 - Regular security updates
 - Monitor for suspicious activity
 
-## Support
-
-- **Documentation**: [Production Deployment Guide](docs/PRODUCTION_DEPLOYMENT_GUIDE.md)
-- **Issues**: Report on GitHub
-- **Monitoring**: Grafana dashboard
-- **Logs**: `logs/` directory
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
