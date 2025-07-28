@@ -1,9 +1,0 @@
-fastmcp==0.4.1
-mcp==1.3.0
-PyMuPDF>=1.26.0
-tinfoil
-psutil>=5.8.0
-requests>=2.31.0
-python-dotenv>=1.0.0
-redis>=4.0.0
-psycopg2-binary>=2.9.0
